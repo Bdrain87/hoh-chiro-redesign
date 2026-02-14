@@ -1,4 +1,5 @@
 import { ArrowRight, ChevronDown, MapPin } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const team = [
   { name: "Dr. Adam Rushford", role: "Founder & Licensed Chiropractor", img: "https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-6.jpg", bio: "Dr. Rushford founded Hands On Health Chiropractic in 2013. Growing up in sports, he discovered chiropractic care early. He switched his major at Central Michigan University and graduated from Life University in Marietta, Georgia.", featured: true },
@@ -27,134 +28,144 @@ const faqs = [
 export default function AboutPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative bg-charcoal overflow-hidden min-h-[50vh] flex items-center">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2021/12/22-scaled.jpg')" }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/80 to-charcoal/50" />
-        <div className="relative max-w-7xl mx-auto px-6 py-24">
+      <section className="relative hero-gradient overflow-hidden min-h-[50vh] flex items-center">
+        <div className="absolute inset-0 bg-cover bg-center opacity-15" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2021/12/22-scaled.jpg')" }} />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1f14] via-[#0a1f14]/85 to-transparent" />
+        <div className="relative max-w-[1280px] mx-auto px-6 py-28">
           <div className="max-w-2xl">
-            <div className="divider mb-6" style={{ background: "#d3d58a" }} />
-            <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4 leading-tight">Our Story</h1>
-            <p className="text-white/60 text-lg max-w-lg leading-relaxed">
+            <div className="section-label" style={{ color: "rgba(106,173,123,0.8)" }}>About Us</div>
+            <h1 className="text-[clamp(2.4rem,5vw,4rem)] font-extrabold text-white mb-5 tracking-tight">Our Story</h1>
+            <p className="text-white/45 text-lg max-w-lg leading-relaxed">
               A team of dedicated professionals united by one mission: helping you live your healthiest life.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Story */}
-      <section className="bg-cream">
-        <div className="max-w-7xl mx-auto px-6 py-24 md:py-32">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <div className="divider mb-6" />
-              <h2 className="text-3xl md:text-4xl font-extrabold text-charcoal mb-6 leading-tight">Founded in 2013</h2>
-              <p className="text-body leading-relaxed mb-4">
-                Dr. Adam Rushford founded Hands On Health Chiropractic with a clear vision: build a team that treats patients with honesty and respect while enriching the Brighton community.
-              </p>
-              <p className="text-body leading-relaxed mb-4">
-                Today, our multi-disciplinary approach includes chiropractic care, spinal decompression, cold laser therapy, functional nutrition, massage therapy, and home care services — all under one roof.
-              </p>
-              <p className="text-body leading-relaxed">
-                We provide care for all ages, helping residents across Livingston, Oakland, and Genesee Counties achieve a higher quality of life.
-              </p>
-            </div>
-            <div className="img-zoom rounded-2xl overflow-hidden shadow-2xl">
-              <img src="https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-6.jpg" alt="Dr. Adam Rushford" className="w-full h-[440px] object-cover" />
-            </div>
+      <section className="bg-surface-alt">
+        <div className="max-w-[1280px] mx-auto px-6 py-28 md:py-36">
+          <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <ScrollReveal variant="left">
+              <div>
+                <div className="section-label">Est. 2013</div>
+                <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-extrabold text-ink mb-6 leading-[1.1] tracking-tight">Founded on a vision of honest, holistic care</h2>
+                <p className="text-ink-secondary leading-relaxed mb-4">
+                  Dr. Adam Rushford founded Hands On Health Chiropractic with a clear vision: build a team that treats patients with honesty and respect while enriching the Brighton community.
+                </p>
+                <p className="text-ink-secondary leading-relaxed mb-4">
+                  Today, our multi-disciplinary approach includes chiropractic care, spinal decompression, cold laser therapy, functional nutrition, massage therapy, and home care services — all under one roof.
+                </p>
+                <p className="text-ink-secondary leading-relaxed">
+                  We provide care for all ages, helping residents across Livingston, Oakland, and Genesee Counties achieve a higher quality of life.
+                </p>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal variant="right">
+              <div className="img-reveal shadow-2xl">
+                <img src="https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-6.jpg" alt="Dr. Adam Rushford" className="w-full h-[480px] object-cover" />
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* Service Areas */}
-      <section className="bg-charcoal">
-        <div className="max-w-7xl mx-auto px-6 py-12">
-          <div className="flex flex-col md:flex-row items-center gap-6">
-            <div className="flex items-center gap-2 text-white/50 text-sm font-medium shrink-0">
-              <MapPin size={16} className="text-olive" /> Proudly Serving
+      <section className="hero-gradient">
+        <div className="max-w-[1280px] mx-auto px-6 py-10">
+          <ScrollReveal>
+            <div className="flex flex-col md:flex-row items-center gap-6">
+              <div className="flex items-center gap-2.5 text-white/40 text-sm font-medium shrink-0">
+                <MapPin size={15} className="text-accent" /> Proudly Serving
+              </div>
+              <div className="flex flex-wrap justify-center gap-2">
+                {serviceAreas.map((area) => (
+                  <span key={area} className="text-white/55 text-sm px-4 py-1.5 rounded-full border border-white/[0.08]">{area}</span>
+                ))}
+              </div>
             </div>
-            <div className="flex flex-wrap justify-center gap-2">
-              {serviceAreas.map((area) => (
-                <span key={area} className="text-white/70 text-sm px-4 py-1.5 rounded-full border border-white/10">{area}</span>
-              ))}
-            </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* Team */}
-      <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-6 py-24 md:py-32">
-          <div className="max-w-2xl mx-auto text-center mb-16">
-            <div className="divider mx-auto mb-6" />
-            <h2 className="text-3xl md:text-5xl font-extrabold text-charcoal mb-4">Meet the Team</h2>
-            <p className="text-body">Experienced professionals dedicated to your health and wellbeing.</p>
-          </div>
+      <section className="bg-surface">
+        <div className="max-w-[1280px] mx-auto px-6 py-28 md:py-36">
+          <ScrollReveal>
+            <div className="max-w-2xl mx-auto text-center mb-16">
+              <div className="section-label justify-center">Our Team</div>
+              <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] font-extrabold text-ink mb-4">Meet the team</h2>
+              <p className="text-ink-secondary">Experienced professionals dedicated to your health and wellbeing.</p>
+            </div>
+          </ScrollReveal>
 
-          {/* Featured doctor */}
           {team.filter(m => m.featured).map((member) => (
-            <div key={member.name} className="grid md:grid-cols-2 gap-12 items-center mb-16 bg-cream rounded-2xl overflow-hidden">
-              <div className="img-zoom h-full">
-                <img src={member.img} alt={member.name} className="w-full h-full min-h-[360px] object-cover" />
+            <ScrollReveal key={member.name} variant="scale">
+              <div className="grid md:grid-cols-2 gap-0 items-stretch mb-16 bg-surface-alt rounded-2xl overflow-hidden border border-border-light">
+                <div className="img-reveal rounded-none">
+                  <img src={member.img} alt={member.name} className="w-full h-full min-h-[380px] object-cover" />
+                </div>
+                <div className="p-10 md:p-12 flex flex-col justify-center">
+                  <p className="text-accent text-[11px] font-semibold uppercase tracking-[0.14em] mb-3">{member.role}</p>
+                  <h3 className="text-2xl font-bold text-ink mb-4 tracking-tight">{member.name}</h3>
+                  <p className="text-ink-secondary leading-relaxed">{member.bio}</p>
+                </div>
               </div>
-              <div className="p-8 md:pr-12">
-                <p className="text-olive text-xs font-semibold uppercase tracking-wider mb-2">{member.role}</p>
-                <h3 className="text-2xl font-bold text-charcoal mb-4">{member.name}</h3>
-                <p className="text-body leading-relaxed">{member.bio}</p>
-              </div>
-            </div>
+            </ScrollReveal>
           ))}
 
-          {/* Rest of team */}
-          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {team.filter(m => !m.featured).map((member) => (
-              <div key={member.name} className="group bg-cream rounded-2xl overflow-hidden card-lift">
-                <div className="img-zoom h-56">
-                  <img src={member.img} alt={member.name} className="w-full h-full object-cover object-top" />
+          <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-5">
+            {team.filter(m => !m.featured).map((member, i) => (
+              <ScrollReveal key={member.name} variant="up" delay={i * 60}>
+                <div className="group bg-surface-alt rounded-2xl overflow-hidden card-hover border border-border-light">
+                  <div className="img-reveal rounded-none h-56">
+                    <img src={member.img} alt={member.name} className="w-full h-full object-cover object-top" />
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-bold text-ink text-sm tracking-tight">{member.name}</h3>
+                    <p className="text-accent text-[11px] font-medium mt-0.5">{member.role}</p>
+                    <p className="text-ink-muted text-xs leading-relaxed mt-2">{member.bio}</p>
+                  </div>
                 </div>
-                <div className="p-5">
-                  <h3 className="font-bold text-charcoal text-sm">{member.name}</h3>
-                  <p className="text-olive text-xs font-medium mt-0.5">{member.role}</p>
-                  <p className="text-body text-xs leading-relaxed mt-2">{member.bio}</p>
-                </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQs */}
-      <section className="bg-cream">
-        <div className="max-w-3xl mx-auto px-6 py-24 md:py-32">
-          <div className="text-center mb-16">
-            <div className="divider mx-auto mb-6" />
-            <h2 className="text-3xl md:text-4xl font-extrabold text-charcoal mb-4">Frequently Asked Questions</h2>
-          </div>
+      <section className="bg-surface-alt">
+        <div className="max-w-3xl mx-auto px-6 py-28 md:py-36">
+          <ScrollReveal>
+            <div className="text-center mb-14">
+              <div className="section-label justify-center">FAQ</div>
+              <h2 className="text-[clamp(1.8rem,3.5vw,2.5rem)] font-extrabold text-ink mb-4 tracking-tight">Frequently asked questions</h2>
+            </div>
+          </ScrollReveal>
           <div className="space-y-3">
-            {faqs.map((faq) => (
-              <details key={faq.q} className="bg-white rounded-xl shadow-sm group">
-                <summary className="flex items-center justify-between cursor-pointer p-6 font-semibold text-charcoal hover:text-olive transition text-sm">
-                  {faq.q}
-                  <ChevronDown size={18} className="text-olive shrink-0 ml-4 transition-transform duration-300 group-open:rotate-180" />
-                </summary>
-                <div className="px-6 pb-6 text-body text-sm leading-relaxed -mt-2">
-                  {faq.a}
-                </div>
-              </details>
+            {faqs.map((faq, i) => (
+              <ScrollReveal key={faq.q} variant="up" delay={i * 40}>
+                <details className="bg-surface rounded-2xl border border-border-light group">
+                  <summary className="flex items-center justify-between cursor-pointer p-6 font-semibold text-ink hover:text-primary transition-colors text-[14px]">
+                    {faq.q}
+                    <ChevronDown size={17} className="text-accent shrink-0 ml-4 transition-transform duration-300 group-open:rotate-180" />
+                  </summary>
+                  <div className="px-6 pb-6 text-ink-secondary text-sm leading-relaxed -mt-1">
+                    {faq.a}
+                  </div>
+                </details>
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative bg-charcoal overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-10" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-20.jpg')" }} />
-        <div className="relative max-w-3xl mx-auto px-6 py-24 text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">Ready to Start?</h2>
-          <p className="text-white/60 mb-10 max-w-md mx-auto">Take the first step toward a healthier life. Our team is ready to build a plan around your goals.</p>
-          <a href="https://intake.mychirotouch.com/?clinic=HOHC0002" target="_blank" rel="noopener noreferrer" className="bg-olive hover:bg-olive-dark text-white px-10 py-4 rounded-full font-semibold text-sm tracking-wide transition-all inline-flex items-center gap-2 btn-pulse">
-            Schedule Now <ArrowRight size={16} />
-          </a>
+      <section className="relative hero-gradient overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center opacity-[0.07]" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-20.jpg')" }} />
+        <div className="relative max-w-[640px] mx-auto px-6 py-28 text-center">
+          <ScrollReveal>
+            <h2 className="text-[clamp(1.8rem,4vw,3rem)] font-extrabold text-white mb-5 tracking-tight">Ready to start?</h2>
+            <p className="text-white/40 mb-12 max-w-md mx-auto leading-relaxed">Take the first step toward a healthier life. Our team is ready to build a plan around your goals.</p>
+            <a href="https://intake.mychirotouch.com/?clinic=HOHC0002" target="_blank" rel="noopener noreferrer" className="btn-accent">
+              Schedule Now <ArrowRight size={15} />
+            </a>
+          </ScrollReveal>
         </div>
       </section>
     </>
