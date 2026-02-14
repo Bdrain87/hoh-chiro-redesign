@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-  /* HOH Chiro exact brand colors */
   --color-olive: #a7bc5e;
   --color-olive-light: #d3d58a;
   --color-olive-dark: #8a9e3f;
@@ -10,18 +9,132 @@
   --color-brown-warm: #b3a490;
   --color-cream: #faf9f5;
   --color-charcoal: #30302e;
-  --color-dark: #222222;
-  --color-body: #666666;
+  --color-dark: #1a1a19;
+  --color-body: #555555;
   --color-sidebar: #dbdbdb;
-
-  --font-sans: "Montserrat", "Helvetica", "Arial", sans-serif;
+  --font-sans: "Montserrat", "Helvetica Neue", "Arial", sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  font-family: var(--font-sans);
-  color: var(--color-body);
+  background: #faf9f5;
+  color: #555555;
+  line-height: 1.7;
+  letter-spacing: -0.01em;
 }
+
+::selection {
+  background: #a7bc5e;
+  color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-32px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(32px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(167, 188, 94, 0.4); }
+  50% { box-shadow: 0 0 24px 6px rgba(167, 188, 94, 0.15); }
+}
+
+.animate-fade-up { animation: fadeUp 0.7s ease-out both; }
+.animate-fade-in { animation: fadeIn 0.6s ease-out both; }
+.animate-slide-left { animation: slideInLeft 0.7s ease-out both; }
+.animate-slide-right { animation: slideInRight 0.7s ease-out both; }
+.animate-scale-in { animation: scaleIn 0.5s ease-out both; }
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background: rgba(48, 48, 46, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.img-zoom { overflow: hidden; }
+.img-zoom img {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.img-zoom:hover img { transform: scale(1.05); }
+
+.card-lift {
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease;
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.12);
+}
+
+.btn-pulse { animation: pulse-glow 3s ease-in-out infinite; }
+
+.gradient-text {
+  background: linear-gradient(135deg, #a7bc5e 0%, #d3d58a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.divider {
+  width: 48px;
+  height: 3px;
+  background: #a7bc5e;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #faf9f5; }
+::-webkit-scrollbar-thumb { background: #b3a490; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #8c612f; }
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid #a7bc5e;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+details summary::-webkit-details-marker { display: none; }
+details summary { list-style: none; }
