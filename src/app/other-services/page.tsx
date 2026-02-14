@@ -22,8 +22,8 @@ export default function OtherServicesPage() {
   return (
     <>
       <section className="relative hero-gradient overflow-hidden min-h-[50vh] flex items-center">
-        <div className="absolute inset-0 bg-cover bg-center opacity-15" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-17.jpg')" }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1f14] via-[#0a1f14]/85 to-transparent" />
+        <div className="absolute inset-0 bg-cover bg-center opacity-40" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-17.jpg')" }} />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1f14]/90 via-[#0a1f14]/60 to-transparent" />
         <div className="relative max-w-[1280px] mx-auto px-6 py-28">
           <div className="max-w-2xl">
             <div className="section-label" style={{ color: "rgba(106,173,123,0.8)" }}>Holistic Health</div>
@@ -36,7 +36,7 @@ export default function OtherServicesPage() {
       </section>
 
       <section className="bg-surface-alt">
-        <div className="max-w-4xl mx-auto px-6 py-28 md:py-36 space-y-6">
+        <div className="max-w-4xl mx-auto px-6 py-16 md:py-20 space-y-6">
           {services.map((svc, i) => (
             <ScrollReveal key={svc.title} variant="up" delay={i * 60}>
               <div className="bg-surface rounded-2xl p-8 md:p-10 card-hover border border-border-light">
@@ -67,9 +67,9 @@ export default function OtherServicesPage() {
       </section>
 
       <section className="bg-surface">
-        <div className="max-w-[1280px] mx-auto px-6 py-28">
+        <div className="max-w-[1280px] mx-auto px-6 py-16 md:py-20">
           <ScrollReveal>
-            <div className="text-center mb-14">
+            <div className="text-center mb-12">
               <div className="section-label justify-center">Testimonials</div>
               <h2 className="text-[clamp(1.8rem,3.5vw,2.5rem)] font-extrabold text-ink tracking-tight">What patients say</h2>
             </div>
@@ -97,7 +97,7 @@ export default function OtherServicesPage() {
 
       <section className="relative hero-gradient overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-[0.07]" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-20.jpg')" }} />
-        <div className="relative max-w-[640px] mx-auto px-6 py-28 text-center">
+        <div className="relative max-w-[640px] mx-auto px-6 py-16 md:py-20 text-center">
           <ScrollReveal>
             <h2 className="text-[clamp(1.8rem,4vw,3rem)] font-extrabold text-white mb-5 tracking-tight">Shop recommended supplements</h2>
             <p className="text-white/40 mb-12">Practitioner-grade supplements curated for your specific health needs.</p>

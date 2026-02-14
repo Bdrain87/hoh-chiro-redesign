@@ -9,7 +9,7 @@ const navLinks = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/other-services", label: "Wellness" },
-  { href: "/videos", label: "Videos" },
+  { href: "/videos", label: "Watch & Learn" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -62,14 +62,12 @@ export default function Navbar() {
       >
         <div className="max-w-[1280px] mx-auto px-6">
           <div className="flex items-center justify-between h-[72px]">
-            <Link href="/" className="shrink-0 group flex items-center gap-3">
-              <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-                <span className="text-white font-bold text-sm tracking-tight">HoH</span>
-              </div>
-              <div className="hidden sm:block">
-                <p className="text-ink font-bold text-[13px] leading-tight tracking-tight">Hands on Health</p>
-                <p className="text-ink-muted text-[11px] leading-tight">Chiropractic</p>
-              </div>
+            <Link href="/" className="shrink-0 group">
+              <img
+                src="/logo.png"
+                alt="Hands on Health Chiropractic"
+                className="h-14 w-auto transition-transform duration-300 group-hover:scale-[1.02]"
+              />
             </Link>
 
             <nav className="hidden lg:flex items-center gap-0.5">

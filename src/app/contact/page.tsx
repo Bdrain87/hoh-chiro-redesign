@@ -27,7 +27,7 @@ export default function ContactPage() {
       </section>
 
       <section className="bg-surface-alt">
-        <div className="max-w-[1280px] mx-auto px-6 py-28 md:py-36">
+        <div className="max-w-[1280px] mx-auto px-6 py-16 md:py-20">
           <div className="grid md:grid-cols-5 gap-14">
             <ScrollReveal variant="left" className="md:col-span-2">
               <div className="space-y-8">

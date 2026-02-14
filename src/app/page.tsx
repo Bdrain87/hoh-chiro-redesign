@@ -63,72 +63,88 @@ const hours = [
 export default function Home() {
   return (
     <>
-      <section className="relative hero-gradient overflow-hidden min-h-[92vh] flex items-center">
+      <section className="relative hero-gradient overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-cover bg-center opacity-20" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2020/03/web_frontdesk.jpg')" }} />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1f14] via-[#0a1f14]/90 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a1f14]/60 via-transparent to-[#0a1f14]/30" />
+          <div className="absolute inset-0 bg-cover bg-center opacity-[0.15]" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2020/03/web_frontdesk.jpg')" }} />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0a1f14] via-[#0d2a1a]/95 to-[#1a3a2a]/80" />
         </div>
 
-        <div className="relative max-w-[1280px] mx-auto px-6 py-28 md:py-36">
-          <div className="max-w-[680px]">
-            <div className="inline-flex items-center gap-2.5 bg-white/[0.06] backdrop-blur-sm border border-white/[0.08] rounded-full pl-3.5 pr-5 py-2 mb-10">
-              <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-              <span className="text-white/60 text-[12px] font-medium tracking-wide">Brighton, MI &mdash; Accepting New Patients</span>
+        <div className="relative max-w-[1280px] mx-auto px-6 pt-16 pb-10 md:pt-20 md:pb-14">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2.5 bg-white/[0.08] backdrop-blur-sm border border-white/[0.1] rounded-full pl-3.5 pr-5 py-2 mb-8">
+                <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+                <span className="text-white/70 text-[12px] font-medium tracking-wide">Brighton, MI &mdash; Accepting New Patients</span>
+              </div>
+
+              <h1 className="text-[clamp(2.6rem,5.5vw,4.5rem)] font-extrabold text-white leading-[1.04] mb-6 tracking-tight">
+                Your path to a<br />
+                <span className="gradient-text">healthier life.</span>
+              </h1>
+
+              <p className="text-white/60 text-lg md:text-xl mb-10 leading-relaxed max-w-[520px]">
+                Chiropractic, massage, and holistic wellness &mdash; all under one roof. Personalized care for lasting results.
+              </p>
+
+              <div className="flex flex-wrap gap-4 mb-10 lg:mb-0">
+                <a
+                  href="https://intake.mychirotouch.com/?clinic=HOHC0002"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-accent"
+                >
+                  Schedule Appointment <ArrowRight size={15} />
+                </a>
+                <a
+                  href="tel:810-494-1900"
+                  className="btn-secondary border-white/15 text-white hover:border-white/30 hover:text-white"
+                >
+                  <Phone size={15} /> (810) 494-1900
+                </a>
+              </div>
             </div>
 
-            <h1 className="text-[clamp(2.8rem,6vw,5rem)] font-extrabold text-white leading-[1.04] mb-7 tracking-tight">
-              Your path to a<br />
-              <span className="gradient-text">healthier life.</span>
-            </h1>
-
-            <p className="text-white/50 text-lg md:text-xl mb-12 leading-relaxed max-w-[520px]">
-              Chiropractic, massage, and holistic wellness &mdash; all under one roof. Personalized care for lasting results.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="https://intake.mychirotouch.com/?clinic=HOHC0002"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-accent"
-              >
-                Schedule Appointment <ArrowRight size={15} />
-              </a>
-              <a
-                href="tel:810-494-1900"
-                className="btn-secondary border-white/15 text-white hover:border-white/30 hover:text-white"
-              >
-                <Phone size={15} /> (810) 494-1900
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2">
-          <div className="w-[26px] h-[42px] border-2 border-white/20 rounded-full flex justify-center pt-2.5">
-            <div className="w-1 h-2.5 bg-white/40 rounded-full animate-bounce" />
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-surface border-b border-border-light">
-        <div className="max-w-[1280px] mx-auto px-6 py-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-            {stats.map((s) => (
-              <ScrollReveal key={s.label} variant="up" delay={0}>
-                <div className="text-center">
-                  <p className="text-[clamp(2rem,4vw,3rem)] font-extrabold text-ink tracking-tighter">{s.value}</p>
-                  <p className="text-ink-muted text-[11px] font-medium uppercase tracking-[0.14em] mt-1">{s.label}</p>
+            <div className="relative hidden lg:block">
+              <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/[0.06]">
+                <img
+                  src="https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-9.jpg"
+                  alt="Chiropractic care at Hands on Health"
+                  className="w-full h-[420px] object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-5 -left-5 bg-white rounded-2xl shadow-[0_24px_48px_-12px_rgba(0,0,0,0.25)] p-5 max-w-[210px]">
+                <div className="flex items-center gap-0.5 mb-2">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={14} className="text-yellow-400 fill-yellow-400" />
+                  ))}
                 </div>
-              </ScrollReveal>
-            ))}
+                <p className="text-ink font-bold text-sm">4.9 on Google</p>
+                <p className="text-ink-muted text-xs">255+ verified reviews</p>
+              </div>
+              <div className="absolute -top-4 -right-4 bg-accent text-white rounded-2xl shadow-xl px-5 py-3.5 text-center">
+                <p className="text-2xl font-extrabold leading-none">10+</p>
+                <p className="text-[10px] font-medium opacity-80 mt-0.5">Years Serving<br />Brighton</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative bg-black/20 backdrop-blur-sm border-t border-white/[0.06]">
+          <div className="max-w-[1280px] mx-auto px-6 py-5">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
+              {stats.map((s) => (
+                <div key={s.label} className="text-center">
+                  <p className="text-[clamp(1.5rem,3vw,2rem)] font-extrabold text-white tracking-tighter">{s.value}</p>
+                  <p className="text-white/40 text-[10px] font-medium uppercase tracking-[0.14em] mt-0.5">{s.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       <section className="bg-surface-alt">
-        <div className="max-w-[1280px] mx-auto px-6 py-28 md:py-36">
+        <div className="max-w-[1280px] mx-auto px-6 py-16 md:py-20">
           <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
             <ScrollReveal variant="left">
               <div>
@@ -151,7 +167,7 @@ export default function Home() {
             <ScrollReveal variant="right">
               <div className="relative">
                 <div className="img-reveal shadow-2xl">
-                  <img src="https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-9.jpg" alt="Chiropractic treatment at Hands on Health" className="w-full h-[480px] object-cover" />
+                  <img src="https://hohchiro.com/wp-content/uploads/2021/12/22-scaled.jpg" alt="Hands on Health Chiropractic team" className="w-full h-[480px] object-cover" />
                 </div>
                 <div className="absolute -bottom-6 -left-6 bg-surface rounded-2xl shadow-[0_24px_48px_-12px_rgba(0,0,0,0.12)] p-5 max-w-[200px] hidden md:block">
                   <div className="flex items-center gap-0.5 mb-2">
@@ -169,9 +185,9 @@ export default function Home() {
       </section>
 
       <section className="bg-surface">
-        <div className="max-w-[1280px] mx-auto px-6 py-28 md:py-36">
+        <div className="max-w-[1280px] mx-auto px-6 py-16 md:py-20">
           <ScrollReveal>
-            <div className="max-w-2xl mx-auto text-center mb-16">
+            <div className="max-w-2xl mx-auto text-center mb-12">
               <div className="section-label justify-center">Core Services</div>
               <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] font-extrabold text-ink mb-4">What we do best</h2>
               <p className="text-ink-secondary">Proven, non-invasive treatments delivered by experienced professionals who genuinely care about your recovery.</p>
@@ -198,19 +214,29 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-surface-alt border-y border-border-light">
-        <div className="max-w-[1280px] mx-auto px-6 py-14">
+      <section className="bg-primary">
+        <div className="max-w-[1280px] mx-auto px-6 py-16 md:py-20">
           <ScrollReveal>
-            <div className="flex flex-col md:flex-row md:items-center gap-8">
-              <div className="md:w-1/3">
-                <h3 className="text-lg font-bold text-ink">Conditions We Treat</h3>
-                <p className="text-ink-muted text-sm mt-1.5">Comprehensive care for a wide range of conditions.</p>
-              </div>
-              <div className="md:w-2/3 flex flex-wrap gap-2">
-                {conditions.map((c) => (
-                  <span key={c} className="bg-surface text-ink-secondary text-[12px] font-medium px-4 py-2 rounded-full border border-border hover:border-accent/40 hover:text-primary transition-colors">{c}</span>
-                ))}
-              </div>
+            <div className="text-center mb-10">
+              <div className="section-label justify-center" style={{ color: "rgba(106,173,123,0.8)" }}>What We Help With</div>
+              <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-extrabold text-white mb-3 tracking-tight">Conditions We Treat</h2>
+              <p className="text-white/40 max-w-lg mx-auto">From chronic pain to injury recovery, our team has the expertise to help.</p>
+            </div>
+          </ScrollReveal>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+            {conditions.map((c, i) => (
+              <ScrollReveal key={c} variant="up" delay={i * 40}>
+                <div className="bg-white/[0.06] border border-white/[0.08] rounded-xl px-5 py-4 text-center hover:bg-white/[0.12] hover:border-accent/40 transition-all duration-300">
+                  <span className="text-white/80 text-sm font-medium">{c}</span>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+          <ScrollReveal>
+            <div className="text-center mt-10">
+              <Link href="/services" className="btn-accent">
+                View All Services <ArrowRight size={14} />
+              </Link>
             </div>
           </ScrollReveal>
         </div>
@@ -218,7 +244,7 @@ export default function Home() {
 
       <section className="relative hero-gradient overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-[0.07]" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-20.jpg')" }} />
-        <div className="relative max-w-[1280px] mx-auto px-6 py-28 md:py-36">
+        <div className="relative max-w-[1280px] mx-auto px-6 py-16 md:py-20">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <ScrollReveal variant="left">
               <div>
@@ -256,9 +282,9 @@ export default function Home() {
       </section>
 
       <section className="bg-surface">
-        <div className="max-w-[1280px] mx-auto px-6 py-28 md:py-36">
+        <div className="max-w-[1280px] mx-auto px-6 py-16 md:py-20">
           <ScrollReveal>
-            <div className="max-w-2xl mx-auto text-center mb-16">
+            <div className="max-w-2xl mx-auto text-center mb-12">
               <div className="section-label justify-center">Testimonials</div>
               <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] font-extrabold text-ink mb-4">Patient stories</h2>
               <p className="text-ink-secondary">Real experiences from the people we serve every day.</p>
@@ -289,7 +315,7 @@ export default function Home() {
       </section>
 
       <section className="bg-surface-alt">
-        <div className="max-w-[1280px] mx-auto px-6 py-28 md:py-36">
+        <div className="max-w-[1280px] mx-auto px-6 py-16 md:py-20">
           <div className="grid md:grid-cols-2 gap-5">
             <ScrollReveal variant="left">
               <div className="bg-surface rounded-2xl p-10 card-hover h-full border border-border-light">
@@ -320,7 +346,7 @@ export default function Home() {
       </section>
 
       <section className="bg-surface">
-        <div className="max-w-[1280px] mx-auto px-6 py-28 md:py-36">
+        <div className="max-w-[1280px] mx-auto px-6 py-16 md:py-20">
           <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-start">
             <ScrollReveal variant="left">
               <div>
@@ -378,8 +404,8 @@ export default function Home() {
       </section>
 
       <section className="relative hero-gradient overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-[0.07]" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-20.jpg')" }} />
-        <div className="relative max-w-[640px] mx-auto px-6 py-28 md:py-36 text-center">
+        <div className="absolute inset-0 bg-cover bg-center opacity-[0.07]" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-17.jpg')" }} />
+        <div className="relative max-w-[640px] mx-auto px-6 py-16 md:py-20 text-center">
           <ScrollReveal>
             <h2 className="text-[clamp(1.8rem,4vw,3rem)] font-extrabold text-white mb-5 tracking-tight">Ready to feel better?</h2>
             <p className="text-white/40 text-lg mb-12 max-w-md mx-auto leading-relaxed">Take the first step. Our team is here to build a personalized plan around your health goals.</p>

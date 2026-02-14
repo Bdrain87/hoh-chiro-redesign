@@ -18,7 +18,7 @@ export default function VideosPage() {
         <div className="relative max-w-[1280px] mx-auto px-6 py-28">
           <div className="max-w-2xl">
             <div className="section-label" style={{ color: "rgba(106,173,123,0.8)" }}>Media</div>
-            <h1 className="text-[clamp(2.4rem,5vw,4rem)] font-extrabold text-white mb-5 tracking-tight">Videos</h1>
+            <h1 className="text-[clamp(2.4rem,5vw,4rem)] font-extrabold text-white mb-5 tracking-tight">Watch &amp; Learn</h1>
             <p className="text-white/45 text-lg max-w-lg leading-relaxed">
               Learn about the benefits of chiropractic care and ways to improve your health.
             </p>
@@ -27,7 +27,7 @@ export default function VideosPage() {
       </section>
 
       <section className="bg-surface-alt">
-        <div className="max-w-[1280px] mx-auto px-6 py-28 md:py-36">
+        <div className="max-w-[1280px] mx-auto px-6 py-16 md:py-20">
           <ScrollReveal>
             <div className="max-w-3xl mx-auto text-center mb-16">
               <p className="text-ink-secondary leading-relaxed">

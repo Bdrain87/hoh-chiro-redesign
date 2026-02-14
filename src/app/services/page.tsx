@@ -24,8 +24,8 @@ export default function ServicesPage() {
   return (
     <>
       <section className="relative hero-gradient overflow-hidden min-h-[50vh] flex items-center">
-        <div className="absolute inset-0 bg-cover bg-center opacity-15" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-16.jpg')" }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1f14] via-[#0a1f14]/85 to-transparent" />
+        <div className="absolute inset-0 bg-cover bg-center opacity-40" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-16.jpg')" }} />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1f14]/90 via-[#0a1f14]/60 to-transparent" />
         <div className="relative max-w-[1280px] mx-auto px-6 py-28">
           <div className="max-w-2xl">
             <div className="section-label" style={{ color: "rgba(106,173,123,0.8)" }}>What We Offer</div>
@@ -38,8 +38,8 @@ export default function ServicesPage() {
       </section>
 
       <section className="bg-surface-alt">
-        <div className="max-w-[1280px] mx-auto px-6 py-28 md:py-36">
-          <div className="space-y-28">
+        <div className="max-w-[1280px] mx-auto px-6 py-16 md:py-20">
+          <div className="space-y-20">
             {services.map((svc, i) => (
               <ScrollReveal key={svc.title} variant={i % 2 === 0 ? "left" : "right"}>
                 <div className="grid md:grid-cols-2 gap-14 lg:gap-20 items-center">
@@ -77,9 +77,9 @@ export default function ServicesPage() {
       </section>
 
       <section className="bg-surface">
-        <div className="max-w-[1280px] mx-auto px-6 py-28">
+        <div className="max-w-[1280px] mx-auto px-6 py-16 md:py-20">
           <ScrollReveal>
-            <div className="text-center mb-14">
+            <div className="text-center mb-12">
               <div className="section-label justify-center">Testimonials</div>
               <h2 className="text-[clamp(1.8rem,3.5vw,2.5rem)] font-extrabold text-ink tracking-tight">What patients say</h2>
             </div>
@@ -107,7 +107,7 @@ export default function ServicesPage() {
 
       <section className="relative hero-gradient overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-[0.07]" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-20.jpg')" }} />
-        <div className="relative max-w-[640px] mx-auto px-6 py-28 text-center">
+        <div className="relative max-w-[640px] mx-auto px-6 py-16 md:py-20 text-center">
           <ScrollReveal>
             <h2 className="text-[clamp(1.8rem,4vw,3rem)] font-extrabold text-white mb-5 tracking-tight">Not sure where to start?</h2>
             <p className="text-white/40 mb-12 max-w-md mx-auto leading-relaxed">Schedule a consultation — we&apos;ll create a personalized treatment plan.</p>

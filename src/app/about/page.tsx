@@ -29,8 +29,8 @@ export default function AboutPage() {
   return (
     <>
       <section className="relative hero-gradient overflow-hidden min-h-[50vh] flex items-center">
-        <div className="absolute inset-0 bg-cover bg-center opacity-15" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2021/12/22-scaled.jpg')" }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1f14] via-[#0a1f14]/85 to-transparent" />
+        <div className="absolute inset-0 bg-cover bg-center opacity-40" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2021/12/22-scaled.jpg')" }} />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1f14]/90 via-[#0a1f14]/60 to-transparent" />
         <div className="relative max-w-[1280px] mx-auto px-6 py-28">
           <div className="max-w-2xl">
             <div className="section-label" style={{ color: "rgba(106,173,123,0.8)" }}>About Us</div>
@@ -43,7 +43,7 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-surface-alt">
-        <div className="max-w-[1280px] mx-auto px-6 py-28 md:py-36">
+        <div className="max-w-[1280px] mx-auto px-6 py-16 md:py-20">
           <div className="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
             <ScrollReveal variant="left">
               <div>
@@ -87,9 +87,9 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-surface">
-        <div className="max-w-[1280px] mx-auto px-6 py-28 md:py-36">
+        <div className="max-w-[1280px] mx-auto px-6 py-16 md:py-20">
           <ScrollReveal>
-            <div className="max-w-2xl mx-auto text-center mb-16">
+            <div className="max-w-2xl mx-auto text-center mb-12">
               <div className="section-label justify-center">Our Team</div>
               <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] font-extrabold text-ink mb-4">Meet the team</h2>
               <p className="text-ink-secondary">Experienced professionals dedicated to your health and wellbeing.</p>
@@ -131,7 +131,7 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-surface-alt">
-        <div className="max-w-3xl mx-auto px-6 py-28 md:py-36">
+        <div className="max-w-3xl mx-auto px-6 py-16 md:py-20">
           <ScrollReveal>
             <div className="text-center mb-14">
               <div className="section-label justify-center">FAQ</div>
@@ -158,7 +158,7 @@ export default function AboutPage() {
 
       <section className="relative hero-gradient overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-[0.07]" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-20.jpg')" }} />
-        <div className="relative max-w-[640px] mx-auto px-6 py-28 text-center">
+        <div className="relative max-w-[640px] mx-auto px-6 py-16 md:py-20 text-center">
           <ScrollReveal>
             <h2 className="text-[clamp(1.8rem,4vw,3rem)] font-extrabold text-white mb-5 tracking-tight">Ready to start?</h2>
             <p className="text-white/40 mb-12 max-w-md mx-auto leading-relaxed">Take the first step toward a healthier life. Our team is ready to build a plan around your goals.</p>
