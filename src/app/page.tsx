@@ -1,391 +1,354 @@
 import Link from "next/link";
-import {
-  ArrowRight,
-  Star,
-  MapPin,
-  Phone,
-  ChevronRight,
-  Activity,
-  Zap,
-  Heart,
-  Leaf,
-  ShieldCheck,
-  Pill,
-} from "lucide-react";
+import { ArrowRight, Star, MapPin, Phone, ChevronRight, Clock, Shield, Users, Heart } from "lucide-react";
 
-const generalServices = [
+const stats = [
+  { value: "10+", label: "Years Serving Brighton" },
+  { value: "4.9", label: "Google Rating" },
+  { value: "9", label: "Team Members" },
+  { value: "10+", label: "Services Offered" },
+];
+
+const coreServices = [
   {
-    icon: Activity,
     title: "Chiropractic Care",
-    desc: "Comprehensive spinal adjustments to restore alignment, reduce pain, and improve overall nervous system function.",
+    desc: "Expert adjustments to reduce pain, restore mobility, and optimize spinal health using proven techniques.",
+    img: "https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-16.jpg",
+    href: "/services",
   },
   {
-    icon: Zap,
-    title: "Spinal Decompression",
-    desc: "Non-surgical decompression therapy targeting disc-related pain, sciatica, and herniated discs.",
-  },
-  {
-    icon: Heart,
     title: "Massage Therapy",
-    desc: "Therapeutic massage to relieve tension, reduce stress, and complement your chiropractic care plan.",
+    desc: "10+ specialized techniques including deep tissue, sports, prenatal, and craniosacral therapy.",
+    img: "https://hohchiro.com/wp-content/uploads/2021/12/Michelle_E-scaled.jpg",
+    href: "/services",
+  },
+  {
+    title: "Spinal Decompression",
+    desc: "FDA-approved non-surgical treatment for herniated discs, sciatica, and degenerative disc disease.",
+    img: "https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-10.jpg",
+    href: "/services",
   },
 ];
 
-const otherServices = [
-  {
-    icon: Leaf,
-    title: "Functional Nutrition",
-    desc: "Personalized nutrition plans to support your body's natural healing processes and overall wellness.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Cold Laser Therapy",
-    desc: "Advanced low-level laser therapy to accelerate healing, reduce inflammation, and manage pain.",
-  },
-  {
-    icon: Pill,
-    title: "Supplements",
-    desc: "Access to the Thorne Online Supplement Store for high-quality, practitioner-recommended supplements.",
-  },
+const wellnessServices = [
+  { icon: Heart, title: "Fascial Stretch Therapy", desc: "Pain-free, table-based stretching for flexibility and performance." },
+  { icon: Shield, title: "Cold Laser Therapy", desc: "Accelerate healing and reduce inflammation at the cellular level." },
+  { icon: Users, title: "Functional Nutrition", desc: "Personalized plans to support your body's natural healing." },
+];
+
+const conditions = [
+  "Back Pain", "Neck Pain", "Sciatica", "Migraines", "Arthritis",
+  "Fibromyalgia", "Bulging Discs", "Carpal Tunnel", "Shoulder Pain",
+  "High Blood Pressure", "Sleep Conditions", "Prenatal Care",
 ];
 
 const testimonials = [
-  {
-    text: "I love everyone at Hands On Health Chiropractic. Started out going just for chiropractic, and now I use their massage therapists, as well. I also have an upcoming appointment with their nutritionist. Everyone in the office is so sweet and helpful.",
-    name: "Shelley",
-  },
-  {
-    text: "I was up in Michigan for a visit but before coming I fell of my bicycle and hurt my piriformis and bruised my ribs. I can't thank Dr. Rushford for helping me be able to enjoy our visit.",
-    name: "Kim Carter",
-  },
-  {
-    text: "All the Dr.s are great and the office staff is kind and helpful too! My health has improved greatly since I've been a patient here! I definitely recommend Hands on Health Chiropractic.",
-    name: "Toni Jackson",
-  },
+  { text: "I love everyone at Hands On Health Chiropractic. Started out going just for chiropractic, and now I use their massage therapists, as well. Everyone in the office is so sweet and helpful.", name: "Shelley", highlight: "so sweet and helpful" },
+  { text: "All the Dr.s are great and the office staff is kind and helpful too! My health has improved greatly since I've been a patient here! I definitely recommend Hands on Health Chiropractic.", name: "Toni Jackson", highlight: "My health has improved greatly" },
+  { text: "I have been going to Hands on Health for over 5 years now. Dr. Rushford and his staff are always professional and friendly. I highly recommend them.", name: "Donald H.", highlight: "over 5 years" },
+  { text: "The massage therapists here are incredible. I've tried many places and Hands on Health is by far the best. They really listen to what you need.", name: "Viviane F.", highlight: "by far the best" },
+  { text: "Dr. Rushford and his team are amazing. They helped me recover from a sports injury and I was back to playing in no time.", name: "Tommy R.", highlight: "back to playing in no time" },
+  { text: "Great experience every time I visit. The doctors take the time to explain everything and the treatment plans really work.", name: "Fred F.", highlight: "treatment plans really work" },
+];
+
+const hours = [
+  { day: "Mon", time: "7:45a–12p, 2:30–6p" },
+  { day: "Tue", time: "8a–12p, 3–6p" },
+  { day: "Wed", time: "7:45a–12p, 2:30–6:30p" },
+  { day: "Thu", time: "7:45a–12p, 2:30–6p" },
+  { day: "Fri", time: "7a–12p" },
+  { day: "Sat", time: "8a–12p" },
 ];
 
 export default function Home() {
   return (
     <>
-      {/* ===== HERO ===== */}
-      <section className="relative bg-charcoal overflow-hidden">
-        {/* Background image placeholder — replace with actual photo */}
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-40"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1920&q=80')",
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/70 to-transparent" />
+      {/* ─── HERO ─── */}
+      <section className="relative bg-charcoal overflow-hidden min-h-[85vh] flex items-center">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2020/03/web_frontdesk.jpg')" }} />
+          <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/85 to-charcoal/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/50 to-transparent" />
+        </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 py-32 md:py-44">
+        <div className="relative max-w-7xl mx-auto px-6 py-24 md:py-32">
           <div className="max-w-2xl">
-            <p className="text-olive-light font-semibold text-sm uppercase tracking-[0.2em] mb-4">
-              Brighton, MI Chiropractor
-            </p>
-            <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-              Chiropractic Care for{" "}
-              <span className="text-olive-light">Healthy Body</span> &amp; Mind
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full pl-3 pr-4 py-1.5 mb-8 animate-fade-up">
+              <span className="w-2 h-2 bg-olive rounded-full" />
+              <span className="text-white/80 text-xs font-medium tracking-wide">Brighton, MI &mdash; Accepting New Patients</span>
+            </div>
+
+            <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-[1.05] mb-6 animate-fade-up delay-100">
+              Your Path to a<br />
+              <span className="gradient-text">Healthier Life</span>
             </h1>
-            <p className="text-gray-300 text-lg md:text-xl mb-8 leading-relaxed">
-              Our team combines the forces of chiropractic, massage, and
-              decompression therapy to treat chronic pain, arthritis,
-              fibromyalgia, and more.
+
+            <p className="text-white/70 text-lg md:text-xl mb-10 leading-relaxed max-w-lg animate-fade-up delay-200">
+              Chiropractic, massage, and holistic wellness &mdash; all under one roof. Personalized care for lasting results.
             </p>
-            <div className="flex flex-wrap gap-4">
+
+            <div className="flex flex-wrap gap-4 animate-fade-up delay-300">
               <a
                 href="https://intake.mychirotouch.com/?clinic=HOHC0002"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-olive hover:bg-olive-dark text-white px-8 py-4 rounded-md font-semibold text-sm uppercase tracking-wide transition inline-flex items-center gap-2"
+                className="bg-olive hover:bg-olive-dark text-white px-8 py-4 rounded-full font-semibold text-sm tracking-wide transition-all duration-200 inline-flex items-center gap-2 btn-pulse"
               >
                 Schedule Appointment <ArrowRight size={16} />
               </a>
               <a
                 href="tel:810-494-1900"
-                className="border-2 border-white/30 hover:border-olive text-white hover:text-olive px-8 py-4 rounded-md font-semibold text-sm uppercase tracking-wide transition inline-flex items-center gap-2"
+                className="glass-dark text-white hover:bg-white/15 px-8 py-4 rounded-full font-semibold text-sm tracking-wide transition-all duration-200 inline-flex items-center gap-2"
               >
-                <Phone size={16} /> Call 810-494-1900
+                <Phone size={16} /> (810) 494-1900
               </a>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* ===== QUICK INFO BAR ===== */}
-      <section className="bg-olive">
-        <div className="max-w-7xl mx-auto px-4 py-5 flex flex-wrap justify-center gap-8 text-white text-sm font-medium">
-          <div className="flex items-center gap-2">
-            <MapPin size={16} />
-            10192 E Grand River Ave #107, Brighton, MI 48116
-          </div>
-          <div className="flex items-center gap-2">
-            <Phone size={16} />
-            <a href="tel:810-494-1900" className="hover:text-cream transition">
-              810-494-1900
-            </a>
-          </div>
-          <div className="flex items-center gap-2">
-            <Star size={16} className="text-yellow-300" />
-            5-Star Rated on Google
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in delay-700">
+          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
+            <div className="w-1 h-2.5 bg-white/50 rounded-full animate-bounce" />
           </div>
         </div>
       </section>
 
-      {/* ===== INTRO / WELCOME ===== */}
+      {/* ─── STATS BAR ─── */}
+      <section className="bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 py-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((s) => (
+              <div key={s.label} className="text-center">
+                <p className="text-3xl md:text-4xl font-extrabold text-charcoal tracking-tight">{s.value}</p>
+                <p className="text-body text-xs font-medium uppercase tracking-wider mt-1">{s.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── WELCOME ─── */}
       <section className="bg-cream">
-        <div className="max-w-7xl mx-auto px-4 py-20">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-6 py-24 md:py-32">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <p className="text-olive font-semibold text-sm uppercase tracking-[0.2em] mb-3">
-                Welcome to Hands on Health
-              </p>
-              <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">
-                Heal, Feel &amp;{" "}
-                <span className="text-brown">Live Better</span>
+              <div className="divider mb-6" />
+              <h2 className="text-3xl md:text-5xl font-extrabold text-charcoal mb-6 leading-tight">
+                Holistic Care.<br />
+                <span className="text-brown">Real Results.</span>
               </h2>
-              <p className="text-body leading-relaxed mb-6">
-                We believe chiropractic therapy can build vitality and change
-                lives. Our team combines the forces of chiropractic, massage,
-                and decompression therapy to treat chronic pain, arthritis,
-                fibromyalgia, and a myriad of other conditions.
+              <p className="text-body leading-relaxed mb-5 text-base">
+                We believe chiropractic therapy can build vitality and change lives. Our team combines chiropractic, massage, and decompression therapy to treat chronic pain, arthritis, fibromyalgia, and a myriad of other conditions.
               </p>
-              <p className="text-body leading-relaxed mb-8">
-                Founded by Dr. Adam Rushford in 2013, Hands on Health
-                Chiropractic takes a multidisciplinary approach to improving
-                patient health and wellbeing in our cutting-edge Brighton, MI
-                facility.
+              <p className="text-body leading-relaxed mb-8 text-base">
+                Founded in 2013 by Dr. Adam Rushford, Hands on Health Chiropractic has grown into a multi-disciplinary wellness center with a talented team of doctors and therapists passionate about enriching our community.
               </p>
-              <Link
-                href="/about"
-                className="text-olive hover:text-olive-dark font-semibold inline-flex items-center gap-2 transition"
-              >
-                Meet Our Team <ChevronRight size={18} />
+              <Link href="/about" className="inline-flex items-center gap-2 text-olive hover:text-olive-dark font-semibold text-sm transition group">
+                Meet Our Team <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
-            <div className="rounded-xl overflow-hidden shadow-xl">
-              <img
-                src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&q=80"
-                alt="Chiropractic adjustment"
-                className="w-full h-80 object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== GENERAL SERVICES ===== */}
-      <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 py-20">
-          <div className="text-center mb-14">
-            <p className="text-olive font-semibold text-sm uppercase tracking-[0.2em] mb-3">
-              What We Offer
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-charcoal">
-              General Services
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {generalServices.map((svc) => (
-              <div
-                key={svc.title}
-                className="group bg-cream hover:bg-olive rounded-xl p-8 transition-all duration-300"
-              >
-                <div className="w-14 h-14 bg-olive/10 group-hover:bg-white/20 rounded-lg flex items-center justify-center mb-5 transition">
-                  <svc.icon
-                    size={28}
-                    className="text-olive group-hover:text-white transition"
-                  />
-                </div>
-                <h3 className="text-xl font-bold text-charcoal group-hover:text-white mb-3 transition">
-                  {svc.title}
-                </h3>
-                <p className="text-body group-hover:text-white/80 text-sm leading-relaxed transition">
-                  {svc.desc}
-                </p>
+            <div className="relative">
+              <div className="img-zoom rounded-2xl overflow-hidden shadow-2xl">
+                <img src="https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-9.jpg" alt="Chiropractic treatment at Hands on Health" className="w-full h-[420px] object-cover" />
               </div>
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <Link
-              href="/services"
-              className="bg-olive hover:bg-olive-dark text-white px-8 py-4 rounded-md font-semibold text-sm uppercase tracking-wide transition inline-flex items-center gap-2"
-            >
-              View All Services <ArrowRight size={16} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== OTHER SERVICES ===== */}
-      <section className="bg-charcoal">
-        <div className="max-w-7xl mx-auto px-4 py-20">
-          <div className="text-center mb-14">
-            <p className="text-olive-light font-semibold text-sm uppercase tracking-[0.2em] mb-3">
-              Beyond Adjustments
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white">
-              Other Services
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {otherServices.map((svc) => (
-              <div
-                key={svc.title}
-                className="border border-white/10 hover:border-olive/50 rounded-xl p-8 transition-all duration-300"
-              >
-                <div className="w-14 h-14 bg-olive/20 rounded-lg flex items-center justify-center mb-5">
-                  <svc.icon size={28} className="text-olive-light" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">
-                  {svc.title}
-                </h3>
-                <p className="text-gray-400 text-sm leading-relaxed">
-                  {svc.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <Link
-              href="/other-services"
-              className="border-2 border-olive text-olive hover:bg-olive hover:text-white px-8 py-4 rounded-md font-semibold text-sm uppercase tracking-wide transition inline-flex items-center gap-2"
-            >
-              Explore All Services <ArrowRight size={16} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== TESTIMONIALS ===== */}
-      <section className="bg-cream">
-        <div className="max-w-7xl mx-auto px-4 py-20">
-          <div className="text-center mb-14">
-            <p className="text-olive font-semibold text-sm uppercase tracking-[0.2em] mb-3">
-              Patient Stories
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-charcoal">
-              Testimonials
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((t) => (
-              <div
-                key={t.name}
-                className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition"
-              >
-                <div className="flex gap-1 mb-4">
+              {/* Floating accent card */}
+              <div className="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-5 max-w-[200px] hidden md:block">
+                <div className="flex items-center gap-1 mb-2">
                   {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      size={18}
-                      className="text-yellow-400 fill-yellow-400"
-                    />
+                    <Star key={i} size={14} className="text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
-                <p className="text-body text-sm leading-relaxed mb-6 italic">
-                  &ldquo;{t.text}&rdquo;
-                </p>
-                <p className="font-semibold text-brown text-sm">— {t.name}</p>
+                <p className="text-charcoal font-bold text-sm">4.9 on Google</p>
+                <p className="text-body text-xs">255+ verified reviews</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CORE SERVICES ─── */}
+      <section className="bg-white">
+        <div className="max-w-7xl mx-auto px-6 py-24 md:py-32">
+          <div className="max-w-2xl mx-auto text-center mb-16">
+            <div className="divider mx-auto mb-6" />
+            <h2 className="text-3xl md:text-5xl font-extrabold text-charcoal mb-4">What We Do Best</h2>
+            <p className="text-body text-base">Proven, non-invasive treatments delivered by experienced professionals who genuinely care about your recovery.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {coreServices.map((svc) => (
+              <Link key={svc.title} href={svc.href} className="group relative rounded-2xl overflow-hidden h-[460px] card-lift">
+                <img src={svc.img} alt={svc.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/40 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-8">
+                  <h3 className="text-2xl font-bold text-white mb-2">{svc.title}</h3>
+                  <p className="text-white/70 text-sm leading-relaxed mb-4">{svc.desc}</p>
+                  <span className="inline-flex items-center gap-1.5 text-olive-light text-sm font-semibold group-hover:gap-3 transition-all">
+                    Learn More <ArrowRight size={14} />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CONDITIONS ─── */}
+      <section className="bg-cream border-y border-olive/10">
+        <div className="max-w-7xl mx-auto px-6 py-16">
+          <div className="flex flex-col md:flex-row md:items-center gap-8">
+            <div className="md:w-1/3">
+              <h3 className="text-xl font-bold text-charcoal">Conditions We Treat</h3>
+              <p className="text-body text-sm mt-2">Comprehensive care for a wide range of musculoskeletal and wellness conditions.</p>
+            </div>
+            <div className="md:w-2/3 flex flex-wrap gap-2">
+              {conditions.map((c) => (
+                <span key={c} className="bg-white text-charcoal/80 text-xs font-medium px-4 py-2 rounded-full border border-olive/10 hover:border-olive/40 transition">{c}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── WELLNESS SERVICES ─── */}
+      <section className="relative bg-charcoal overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center opacity-10" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-20.jpg')" }} />
+        <div className="relative max-w-7xl mx-auto px-6 py-24 md:py-32">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <div className="w-12 h-[3px] bg-olive-light rounded mb-6" />
+              <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4 leading-tight">
+                Beyond<br />Adjustments
+              </h2>
+              <p className="text-white/60 text-base leading-relaxed mb-8">
+                A complete approach to wellness. From stretch therapy and cold laser to nutrition counseling and supplements, we address every dimension of your health.
+              </p>
+              <Link href="/other-services" className="inline-flex items-center gap-2 bg-olive hover:bg-olive-dark text-white px-7 py-3.5 rounded-full font-semibold text-sm tracking-wide transition group">
+                View All Services <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+            <div className="space-y-4">
+              {wellnessServices.map((svc) => (
+                <div key={svc.title} className="glass-dark rounded-xl p-6 hover:bg-white/10 transition-colors duration-300">
+                  <div className="flex items-start gap-4">
+                    <div className="w-11 h-11 bg-olive/20 rounded-lg flex items-center justify-center shrink-0">
+                      <svc.icon size={20} className="text-olive-light" />
+                    </div>
+                    <div>
+                      <h3 className="text-white font-bold text-base mb-1">{svc.title}</h3>
+                      <p className="text-white/50 text-sm leading-relaxed">{svc.desc}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── TESTIMONIALS ─── */}
+      <section className="bg-white">
+        <div className="max-w-7xl mx-auto px-6 py-24 md:py-32">
+          <div className="max-w-2xl mx-auto text-center mb-16">
+            <div className="divider mx-auto mb-6" />
+            <h2 className="text-3xl md:text-5xl font-extrabold text-charcoal mb-4">Patient Stories</h2>
+            <p className="text-body">Real experiences from the people we serve every day.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {testimonials.map((t) => (
+              <div key={t.name} className="bg-cream rounded-2xl p-8 card-lift relative">
+                <div className="flex gap-1 mb-5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={14} className="text-yellow-400 fill-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-charcoal/80 text-sm leading-relaxed mb-6">&ldquo;{t.text}&rdquo;</p>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 bg-olive/15 rounded-full flex items-center justify-center">
+                    <span className="text-olive font-bold text-xs">{t.name.charAt(0)}</span>
+                  </div>
+                  <p className="font-semibold text-charcoal text-sm">{t.name}</p>
+                </div>
               </div>
             ))}
           </div>
-          <div className="text-center mt-10">
-            <a
-              href="https://reviews.nextadagency.com/hands-on-health-chiropractic-156658570088144/review-us"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-olive hover:text-olive-dark font-semibold inline-flex items-center gap-2 transition"
-            >
-              Write a Review <ArrowRight size={16} />
-            </a>
-          </div>
         </div>
       </section>
 
-      {/* ===== PATIENT CENTER ===== */}
-      <section className="bg-brown-light">
-        <div className="max-w-7xl mx-auto px-4 py-16">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Patient Center
-              </h2>
-              <p className="text-white/80 leading-relaxed mb-8">
-                Prepare for your first appointment by visiting our patient
-                center. Complete your forms online ahead of time for a faster,
-                smoother visit.
-              </p>
-              <a
-                href="https://intake.mychirotouch.com/?clinic=HOHC0002"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white text-brown hover:bg-cream px-8 py-4 rounded-md font-semibold text-sm uppercase tracking-wide transition inline-flex items-center gap-2"
-              >
-                Access Patient Forms <ArrowRight size={16} />
+      {/* ─── PATIENT CENTER + SUPPLEMENTS ─── */}
+      <section className="bg-cream">
+        <div className="max-w-7xl mx-auto px-6 py-24 md:py-32">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-2xl p-10 card-lift">
+              <div className="w-12 h-12 bg-olive/10 rounded-xl flex items-center justify-center mb-6">
+                <Shield size={24} className="text-olive" />
+              </div>
+              <h3 className="text-2xl font-bold text-charcoal mb-3">New Patient?</h3>
+              <p className="text-body leading-relaxed mb-6">Complete your intake forms online before your first visit for a faster, smoother experience. We make it easy.</p>
+              <a href="https://intake.mychirotouch.com/?clinic=HOHC0002" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-charcoal hover:bg-charcoal/90 text-white px-6 py-3 rounded-full font-semibold text-sm transition">
+                Access Patient Forms <ArrowRight size={14} />
               </a>
             </div>
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Supplements
-              </h2>
-              <p className="text-white/80 leading-relaxed mb-8">
-                Browse our recommended supplements through the Thorne Online
-                Supplement Store. Consult with our chiropractic team to ensure
-                products align with your healthcare plan.
-              </p>
-              <a
-                href="https://www.thorne.com/u/handsonhealthchiropractic"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-olive hover:bg-olive-dark text-white px-8 py-4 rounded-md font-semibold text-sm uppercase tracking-wide transition inline-flex items-center gap-2"
-              >
-                Thorne Supplement Store <ArrowRight size={16} />
+            <div className="bg-white rounded-2xl p-10 card-lift">
+              <div className="w-12 h-12 bg-olive/10 rounded-xl flex items-center justify-center mb-6">
+                <Heart size={24} className="text-olive" />
+              </div>
+              <h3 className="text-2xl font-bold text-charcoal mb-3">Supplements</h3>
+              <p className="text-body leading-relaxed mb-6">Browse our practitioner-recommended supplements through the Thorne Online Store, tailored to your specific health needs.</p>
+              <a href="https://www.thorne.com/u/handsonhealthchiropractic" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-olive hover:bg-olive-dark text-white px-6 py-3 rounded-full font-semibold text-sm transition">
+                Shop Thorne <ArrowRight size={14} />
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== MAP / CTA ===== */}
+      {/* ─── LOCATION + HOURS ─── */}
       <section className="bg-white">
-        <div className="max-w-7xl mx-auto px-4 py-20">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-6 py-24 md:py-32">
+          <div className="grid md:grid-cols-2 gap-16 items-start">
             <div>
-              <p className="text-olive font-semibold text-sm uppercase tracking-[0.2em] mb-3">
-                Visit Us
+              <div className="divider mb-6" />
+              <h2 className="text-3xl md:text-4xl font-extrabold text-charcoal mb-4">Visit Us in Brighton</h2>
+              <p className="text-body leading-relaxed mb-6">
+                Conveniently located on E Grand River Ave near Fonda Lake. Proudly serving Brighton, Howell, Hartland, Fenton, South Lyon, Milford, and surrounding communities across Livingston, Oakland &amp; Genesee Counties.
               </p>
-              <h2 className="text-3xl md:text-4xl font-bold text-charcoal mb-6">
-                Chiropractic Excellence in Brighton, MI
-              </h2>
-              <p className="text-body leading-relaxed mb-8">
-                Conveniently located on E Grand River Ave, Hands on Health
-                Chiropractic serves Brighton and the surrounding communities
-                of Howell, Hartland, and Livingston County.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href="https://goo.gl/maps/jsDzvzERg9VgjSGg7"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-olive hover:bg-olive-dark text-white px-6 py-3 rounded-md font-semibold text-sm uppercase tracking-wide transition inline-flex items-center gap-2"
-                >
-                  <MapPin size={16} /> Get Directions
+
+              {/* Hours grid */}
+              <div className="bg-cream rounded-xl p-6 mb-8">
+                <div className="flex items-center gap-2 mb-4">
+                  <Clock size={16} className="text-olive" />
+                  <h4 className="font-bold text-charcoal text-sm">Office Hours</h4>
+                </div>
+                <div className="grid grid-cols-2 gap-x-6 gap-y-2 text-sm">
+                  {hours.map((h) => (
+                    <div key={h.day} className="flex justify-between">
+                      <span className="font-semibold text-charcoal">{h.day}</span>
+                      <span className="text-body">{h.time}</span>
+                    </div>
+                  ))}
+                  <div className="flex justify-between">
+                    <span className="font-semibold text-charcoal">Sun</span>
+                    <span className="text-body/50">Closed</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-3">
+                <a href="https://g.page/Hohchiro?share" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-charcoal hover:bg-charcoal/90 text-white px-6 py-3 rounded-full font-semibold text-sm transition">
+                  <MapPin size={14} /> Get Directions
                 </a>
-                <a
-                  href="tel:810-494-1900"
-                  className="border-2 border-olive text-olive hover:bg-olive hover:text-white px-6 py-3 rounded-md font-semibold text-sm uppercase tracking-wide transition inline-flex items-center gap-2"
-                >
-                  <Phone size={16} /> Call Now
+                <a href="tel:810-494-1900" className="inline-flex items-center gap-2 border-2 border-charcoal/15 text-charcoal hover:border-olive hover:text-olive px-6 py-3 rounded-full font-semibold text-sm transition">
+                  <Phone size={14} /> Call Now
                 </a>
               </div>
             </div>
-            <div className="rounded-xl overflow-hidden shadow-lg">
+            <div className="rounded-2xl overflow-hidden shadow-xl">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2941.1!2d-83.7825!3d42.5294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDLCsDMxJzQ1LjgiTiA4M8KwNDYnNTcuMCJX!5e0!3m2!1sen!2sus!4v1"
                 width="100%"
-                height="350"
+                height="420"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
@@ -396,6 +359,32 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ─── FINAL CTA ─── */}
+      <section className="relative bg-charcoal overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center opacity-15" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-20.jpg')" }} />
+        <div className="relative max-w-3xl mx-auto px-6 py-24 md:py-32 text-center">
+          <h2 className="text-3xl md:text-5xl font-extrabold text-white mb-4">Ready to Feel Better?</h2>
+          <p className="text-white/60 text-lg mb-10 max-w-md mx-auto">Take the first step. Our team is here to build a personalized plan around your health goals.</p>
+          <a
+            href="https://intake.mychirotouch.com/?clinic=HOHC0002"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-olive hover:bg-olive-dark text-white px-10 py-4 rounded-full font-semibold text-sm tracking-wide transition-all inline-flex items-center gap-2 btn-pulse"
+          >
+            Book Your First Visit <ArrowRight size={16} />
+          </a>
+        </div>
+      </section>
+
+      {/* Disclaimer */}
+      <div className="bg-cream border-t border-olive/5">
+        <div className="max-w-4xl mx-auto px-6 py-5">
+          <p className="text-[11px] text-body/40 text-center leading-relaxed">
+            Individual results may vary. Information on this site is not intended to diagnose, treat, cure, or prevent any disease. Consult a qualified healthcare professional before beginning any treatment.
+          </p>
+        </div>
+      </div>
     </>
   );
 }
