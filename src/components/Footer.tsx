@@ -6,7 +6,7 @@ const links = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/other-services", label: "Wellness" },
-  { href: "/videos", label: "Videos" },
+  { href: "/videos", label: "Watch & Learn" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -42,14 +42,8 @@ export default function Footer() {
       <div className="max-w-[1280px] mx-auto px-6 py-16">
         <div className="grid md:grid-cols-4 gap-12">
           <div>
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-sm tracking-tight">HoH</span>
-              </div>
-              <div>
-                <p className="text-white font-bold text-[13px] leading-tight">Hands on Health</p>
-                <p className="text-white/40 text-[11px] leading-tight">Chiropractic</p>
-              </div>
+            <div className="mb-5">
+              <img src="/logo.png" alt="Hands on Health Chiropractic" className="h-16 w-auto brightness-200" />
             </div>
             <p className="text-white/40 text-sm leading-relaxed mb-6">
               Chiropractic care for healthy body &amp; mind. Serving Brighton, MI and surrounding communities since 2013.
