@@ -1,97 +1,104 @@
-import { ArrowRight, Leaf, ShieldCheck, Pill } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
+
+const massageTypes = ["Swedish", "Deep Tissue", "Prenatal & Pediatric", "Lymphatic Drain", "Craniosacral", "Trigger Point", "Aromatherapy", "Reversed Polarity", "Sports Massage", "Myofascial Release"];
+const supplementProviders = ["Standard Process", "Jigsaw", "Integrative Therapeutics", "Biotics", "Urban Moonshine", "Klaire Labs", "Vital Proteins", "Health & Wisdom", "Thorne"];
 
 const services = [
-  {
-    icon: Leaf,
-    title: "Functional Nutrition",
-    desc: "Our functional nutrition services go beyond conventional dietary advice. We use comprehensive assessments to identify nutritional deficiencies and create personalized plans that support your body's natural healing. Whether you're dealing with digestive issues, fatigue, or chronic inflammation, our nutrition approach addresses the root cause.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Cold Laser Therapy",
-    desc: "Cold laser therapy (low-level laser therapy) uses specific wavelengths of light to stimulate healing at the cellular level. This painless, non-invasive treatment accelerates tissue repair, reduces inflammation, and manages pain. It's effective for soft tissue injuries, joint conditions, neuropathy, and post-surgical healing.",
-  },
-  {
-    icon: Pill,
-    title: "Supplements & Home Care",
-    desc: "We've partnered with Thorne to provide access to high-quality, practitioner-grade supplements. Our team can recommend specific products based on your health needs and treatment plan. We also provide home care guidance including exercises, stretches, and ergonomic advice to support your recovery between visits.",
-  },
+  { title: "Massage Therapy", desc: "Immediate and ongoing relief for muscle soreness and pain caused by injuries, conditions, stress, and repeated trauma. When combined with chiropractic care, massage therapy provides powerful benefits for chronic pain sufferers.", tags: massageTypes, tagLabel: "Techniques" },
+  { title: "Work Ergonomics", desc: "Poor posture and chronic sitting account for thousands of hours and millions of dollars lost annually. We offer workplace ergonomic assessments plus free community workshops (45 min–1 hour) on wellness and ergonomic best practices." },
+  { title: "Functional Nutrition", desc: "Going beyond conventional dietary advice, we use comprehensive assessments to identify nutritional deficiencies and create personalized plans that address root causes — whether digestive issues, fatigue, or chronic inflammation." },
+  { title: "Cold Laser Therapy", desc: "Specific wavelengths of light stimulate healing at the cellular level. This painless, non-invasive treatment accelerates tissue repair, reduces inflammation, and manages pain for soft tissue injuries, joint conditions, and neuropathy." },
+  { title: "Supplements & Home Care", desc: "We carry practitioner-grade supplements from trusted providers and provide home care guidance including exercises, stretches, and ergonomic advice to support your recovery between visits.", tags: supplementProviders, tagLabel: "Our Partners" },
+];
+
+const testimonials = [
+  { name: "Viviane F.", text: "The massage therapists here are incredible. Hands on Health is by far the best. They really listen to what you need." },
+  { name: "Heather H.", text: "The whole team approach has made a huge difference in my overall health." },
+  { name: "Brandon P.", text: "Cold laser therapy for my knee injury worked wonders. The staff genuinely cares about your recovery." },
 ];
 
 export default function OtherServicesPage() {
   return (
     <>
-      <section className="bg-charcoal">
-        <div className="max-w-7xl mx-auto px-4 py-20">
-          <p className="text-olive-light font-semibold text-sm uppercase tracking-[0.2em] mb-3">
-            Beyond Adjustments
-          </p>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Other <span className="text-olive-light">Services</span>
-          </h1>
-          <p className="text-gray-300 text-lg max-w-2xl leading-relaxed">
-            Complementary therapies and wellness services to support your total
-            health journey.
-          </p>
+      <section className="relative bg-charcoal overflow-hidden min-h-[50vh] flex items-center">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-17.jpg')" }} />
+        <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/80 to-charcoal/50" />
+        <div className="relative max-w-7xl mx-auto px-6 py-24">
+          <div className="max-w-2xl">
+            <div className="divider mb-6" style={{ background: "#d3d58a" }} />
+            <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-4">Wellness Services</h1>
+            <p className="text-white/60 text-lg max-w-lg leading-relaxed">
+              Complementary therapies to support your total health journey — beyond adjustments.
+            </p>
+          </div>
         </div>
       </section>
 
       <section className="bg-cream">
-        <div className="max-w-7xl mx-auto px-4 py-20 space-y-16">
+        <div className="max-w-4xl mx-auto px-6 py-24 md:py-32 space-y-8">
           {services.map((svc, i) => (
-            <div
-              key={svc.title}
-              className={`grid md:grid-cols-2 gap-12 items-center`}
-            >
-              <div className={i % 2 !== 0 ? "md:order-2" : ""}>
-                <div className="w-16 h-16 bg-olive/10 rounded-xl flex items-center justify-center mb-5">
-                  <svc.icon size={32} className="text-olive" />
+            <div key={svc.title} className="bg-white rounded-2xl p-8 md:p-10 card-lift">
+              <div className="flex items-start gap-4 mb-4">
+                <span className="text-olive/30 font-extrabold text-4xl leading-none">0{i + 1}</span>
+                <div className="flex-1">
+                  <h2 className="text-xl md:text-2xl font-bold text-charcoal">{svc.title}</h2>
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-charcoal mb-4">
-                  {svc.title}
-                </h2>
-                <p className="text-body leading-relaxed mb-6">{svc.desc}</p>
-                <a
-                  href="https://intake.mychirotouch.com/?clinic=HOHC0002"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-olive hover:text-olive-dark font-semibold inline-flex items-center gap-2 transition"
-                >
-                  Learn More <ArrowRight size={16} />
-                </a>
               </div>
-              <div
-                className={`bg-brown-warm/20 rounded-xl h-64 flex items-center justify-center ${
-                  i % 2 !== 0 ? "md:order-1" : ""
-                }`}
-              >
-                <svc.icon size={80} className="text-olive/20" />
-              </div>
+              <p className="text-body leading-relaxed mb-5">{svc.desc}</p>
+              {svc.tags && (
+                <div className="mb-5">
+                  <p className="text-xs font-semibold text-charcoal/50 uppercase tracking-wider mb-2">{svc.tagLabel}</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {svc.tags.map((tag) => (
+                      <span key={tag} className="bg-olive/8 text-olive text-xs font-medium px-3 py-1 rounded-full">{tag}</span>
+                    ))}
+                  </div>
+                </div>
+              )}
+              <a href="https://intake.mychirotouch.com/?clinic=HOHC0002" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-olive hover:text-olive-dark font-semibold text-sm transition group">
+                Schedule <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              </a>
             </div>
           ))}
         </div>
       </section>
 
+      {/* Testimonials */}
+      <section className="bg-white">
+        <div className="max-w-7xl mx-auto px-6 py-24">
+          <div className="divider mx-auto mb-6" />
+          <h2 className="text-3xl font-extrabold text-charcoal text-center mb-12">What Patients Say</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {testimonials.map((t) => (
+              <div key={t.name} className="bg-cream rounded-2xl p-8 card-lift">
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => <Star key={i} size={14} className="text-yellow-400 fill-yellow-400" />)}
+                </div>
+                <p className="text-charcoal/80 text-sm leading-relaxed mb-6">&ldquo;{t.text}&rdquo;</p>
+                <p className="font-semibold text-charcoal text-sm">&mdash; {t.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Thorne CTA */}
-      <section className="bg-olive">
-        <div className="max-w-7xl mx-auto px-4 py-16 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Shop Recommended Supplements
-          </h2>
-          <p className="text-white/80 mb-8 max-w-xl mx-auto">
-            Browse our curated selection of Thorne supplements, recommended by
-            our chiropractic team for your specific health needs.
-          </p>
-          <a
-            href="https://www.thorne.com/u/handsonhealthchiropractic"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white text-olive hover:bg-cream px-8 py-4 rounded-md font-semibold text-sm uppercase tracking-wide transition inline-flex items-center gap-2"
-          >
-            Thorne Supplement Store <ArrowRight size={16} />
+      <section className="relative bg-charcoal overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center opacity-10" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-20.jpg')" }} />
+        <div className="relative max-w-3xl mx-auto px-6 py-24 text-center">
+          <h2 className="text-3xl font-extrabold text-white mb-4">Shop Recommended Supplements</h2>
+          <p className="text-white/60 mb-10">Practitioner-grade supplements curated for your specific health needs.</p>
+          <a href="https://www.thorne.com/u/handsonhealthchiropractic" target="_blank" rel="noopener noreferrer" className="bg-olive hover:bg-olive-dark text-white px-10 py-4 rounded-full font-semibold text-sm tracking-wide transition inline-flex items-center gap-2">
+            Thorne Store <ArrowRight size={16} />
           </a>
         </div>
       </section>
+
+      <div className="bg-cream border-t border-olive/5">
+        <div className="max-w-4xl mx-auto px-6 py-5">
+          <p className="text-[11px] text-body/40 text-center">Individual results may vary. Consult a qualified healthcare professional before beginning any treatment.</p>
+        </div>
+      </div>
     </>
   );
 }
