@@ -1,117 +1,126 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Phone, FileText } from "lucide-react";
+import { Menu, X, Phone, ChevronRight } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About Us" },
-  { href: "/services", label: "General Services" },
-  { href: "/other-services", label: "Other Services" },
+  { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
+  { href: "/other-services", label: "Wellness" },
   { href: "/videos", label: "Videos" },
-  { href: "/contact", label: "Contact Us" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <>
-      {/* Top bar */}
-      <div className="bg-olive text-white text-sm">
-        <div className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
-          <a
-            href="tel:810-494-1900"
-            className="flex items-center gap-2 hover:text-cream transition"
-          >
-            <Phone size={14} />
-            Call Us Today! 810-494-1900
+      {/* Top utility bar */}
+      <div className="bg-charcoal text-white/80 text-xs">
+        <div className="max-w-7xl mx-auto px-6 py-2.5 flex justify-between items-center">
+          <a href="tel:810-494-1900" className="flex items-center gap-1.5 hover:text-olive transition">
+            <Phone size={12} /> (810) 494-1900
           </a>
-          <a
-            href="https://intake.mychirotouch.com/?clinic=HOHC0002"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 hover:text-cream transition"
-          >
-            <FileText size={14} />
-            Patient Forms
-          </a>
+          <div className="hidden sm:flex items-center gap-6">
+            <span className="text-white/40">10192 E Grand River Ave #107, Brighton, MI</span>
+            <a
+              href="https://intake.mychirotouch.com/?clinic=HOHC0002"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-olive/20 hover:bg-olive/30 text-olive-light px-3 py-1 rounded-full transition text-xs font-medium"
+            >
+              Patient Forms
+            </a>
+          </div>
         </div>
       </div>
 
       {/* Main nav */}
-      <header className="bg-white sticky top-0 z-50 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
-            <div className="flex flex-col items-center leading-none">
-              <div className="flex gap-1 mb-1">
-                <span className="text-olive text-2xl">✋</span>
-                <span className="text-brown text-2xl">✋</span>
-                <span className="text-olive text-2xl">✋</span>
-              </div>
-              <span className="font-bold text-charcoal text-lg tracking-wider uppercase">
-                Hands on Health
-              </span>
-              <span className="text-brown-light text-xs tracking-[0.3em] uppercase">
-                Chiropractic
-              </span>
-            </div>
-          </Link>
+      <header
+        className={`sticky top-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-white/90 backdrop-blur-xl shadow-sm border-b border-gray-100/50"
+            : "bg-white"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-center justify-between h-18">
+            {/* Logo */}
+            <Link href="/" className="shrink-0 relative group">
+              <img
+                src="https://hohchiro.com/wp-content/uploads/2020/02/logotall.png"
+                alt="Hands on Health Chiropractic"
+                className="h-14 w-auto transition-transform duration-300 group-hover:scale-[1.02]"
+              />
+            </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-brown/90 hover:text-olive font-medium text-sm uppercase tracking-wide transition"
+            {/* Desktop nav */}
+            <nav className="hidden lg:flex items-center gap-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="relative px-4 py-2 text-charcoal/70 hover:text-charcoal text-[13px] font-semibold uppercase tracking-[0.08em] transition-colors duration-200 rounded-lg hover:bg-cream"
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <a
+                href="https://intake.mychirotouch.com/?clinic=HOHC0002"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-4 bg-olive hover:bg-olive-dark text-white pl-6 pr-5 py-2.5 rounded-full font-semibold text-xs uppercase tracking-wider transition-all duration-200 inline-flex items-center gap-1.5 btn-pulse"
               >
-                {link.label}
-              </Link>
-            ))}
-            <a
-              href="https://intake.mychirotouch.com/?clinic=HOHC0002"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-olive hover:bg-olive-dark text-white px-6 py-3 rounded-md font-semibold text-sm uppercase tracking-wide transition"
-            >
-              Schedule Now
-            </a>
-          </nav>
+                Book Now <ChevronRight size={14} />
+              </a>
+            </nav>
 
-          {/* Mobile toggle */}
-          <button
-            className="md:hidden text-charcoal"
-            onClick={() => setOpen(!open)}
-            aria-label="Toggle menu"
-          >
-            {open ? <X size={28} /> : <Menu size={28} />}
-          </button>
+            {/* Mobile toggle */}
+            <button
+              className="lg:hidden w-10 h-10 flex items-center justify-center rounded-lg hover:bg-cream transition"
+              onClick={() => setOpen(!open)}
+              aria-label="Toggle menu"
+            >
+              {open ? <X size={22} className="text-charcoal" /> : <Menu size={22} className="text-charcoal" />}
+            </button>
+          </div>
         </div>
 
-        {/* Mobile nav */}
+        {/* Mobile menu */}
         {open && (
-          <div className="md:hidden bg-white border-t border-gray-100 px-4 pb-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="block py-3 text-brown/90 hover:text-olive font-medium text-sm uppercase tracking-wide border-b border-gray-50 transition"
-                onClick={() => setOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <a
-              href="https://intake.mychirotouch.com/?clinic=HOHC0002"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block mt-4 bg-olive hover:bg-olive-dark text-white text-center px-6 py-3 rounded-md font-semibold text-sm uppercase tracking-wide transition"
-            >
-              Schedule Now
-            </a>
+          <div className="lg:hidden bg-white border-t border-gray-100 animate-fade-in">
+            <div className="max-w-7xl mx-auto px-6 py-4 space-y-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="block py-3 px-4 text-charcoal/80 hover:text-charcoal hover:bg-cream font-semibold text-sm uppercase tracking-wide rounded-lg transition"
+                  onClick={() => setOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <div className="pt-3">
+                <a
+                  href="https://intake.mychirotouch.com/?clinic=HOHC0002"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-olive hover:bg-olive-dark text-white text-center px-6 py-3.5 rounded-full font-semibold text-sm uppercase tracking-wide transition"
+                >
+                  Book Now
+                </a>
+              </div>
+            </div>
           </div>
         )}
       </header>
