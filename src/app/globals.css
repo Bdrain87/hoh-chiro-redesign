@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  /* HOH Chiro exact brand colors */
+  --color-olive: #a7bc5e;
+  --color-olive-light: #d3d58a;
+  --color-olive-dark: #8a9e3f;
+  --color-brown: #8c612f;
+  --color-brown-light: #8d795e;
+  --color-brown-warm: #b3a490;
+  --color-cream: #faf9f5;
+  --color-charcoal: #30302e;
+  --color-dark: #222222;
+  --color-body: #666666;
+  --color-sidebar: #dbdbdb;
+
+  --font-sans: "Montserrat", "Helvetica", "Arial", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-body);
+}
