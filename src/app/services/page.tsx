@@ -52,7 +52,7 @@ export default function ServicesPage() {
                     </a>
                   </div>
                   <div className={`img-reveal shadow-2xl ${i % 2 !== 0 ? "md:order-1" : ""}`}>
-                    <img src={svc.img} alt={svc.title} className="w-full h-[380px] object-cover" />
+                    <img src={svc.img} alt={svc.title} className="w-full h-[260px] md:h-[380px] object-cover" />
                   </div>
                 </div>
               </ScrollReveal>
