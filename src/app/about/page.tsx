@@ -29,13 +29,13 @@ export default function AboutPage() {
   return (
     <>
       <section className="relative hero-gradient overflow-hidden min-h-[50vh] flex items-center">
-        <div className="absolute inset-0 bg-cover bg-center opacity-40" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2021/12/22-scaled.jpg')" }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1f14]/90 via-[#0a1f14]/60 to-transparent" />
+        <div className="absolute inset-0 bg-cover bg-center opacity-60" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2021/12/22-scaled.jpg')" }} />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1f14]/60 via-[#0a1f14]/40 to-[#0a1f14]/70" />
         <div className="relative max-w-[1280px] mx-auto px-6 py-28">
           <div className="max-w-2xl">
             <div className="section-label" style={{ color: "rgba(106,173,123,0.8)" }}>About Us</div>
             <h1 className="text-[clamp(2.4rem,5vw,4rem)] font-extrabold text-white mb-5 tracking-tight">Our Story</h1>
-            <p className="text-white/45 text-lg max-w-lg leading-relaxed">
+            <p className="text-white/80 text-lg max-w-lg leading-relaxed">
               A team of dedicated professionals united by one mission: helping you live your healthiest life.
             </p>
           </div>
@@ -62,7 +62,7 @@ export default function AboutPage() {
             </ScrollReveal>
             <ScrollReveal variant="right">
               <div className="img-reveal shadow-2xl">
-                <img src="https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-6.jpg" alt="Dr. Adam Rushford" className="w-full h-[480px] object-cover" />
+                <img src="https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-20.jpg" alt="Hands on Health Chiropractic care" className="w-full h-[480px] object-cover" />
               </div>
             </ScrollReveal>
           </div>
@@ -78,7 +78,7 @@ export default function AboutPage() {
               </div>
               <div className="flex flex-wrap justify-center gap-2">
                 {serviceAreas.map((area) => (
-                  <span key={area} className="text-white/55 text-sm px-4 py-1.5 rounded-full border border-white/[0.08]">{area}</span>
+                  <span key={area} className="text-white/80 text-sm px-4 py-1.5 rounded-full border border-white/[0.15]">{area}</span>
                 ))}
               </div>
             </div>
@@ -157,11 +157,10 @@ export default function AboutPage() {
       </section>
 
       <section className="relative hero-gradient overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-[0.07]" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-20.jpg')" }} />
         <div className="relative max-w-[640px] mx-auto px-6 py-16 md:py-20 text-center">
           <ScrollReveal>
             <h2 className="text-[clamp(1.8rem,4vw,3rem)] font-extrabold text-white mb-5 tracking-tight">Ready to start?</h2>
-            <p className="text-white/40 mb-12 max-w-md mx-auto leading-relaxed">Take the first step toward a healthier life. Our team is ready to build a plan around your goals.</p>
+            <p className="text-white/75 mb-12 max-w-md mx-auto leading-relaxed">Take the first step toward a healthier life. Our team is ready to build a plan around your goals.</p>
             <a href="https://intake.mychirotouch.com/?clinic=HOHC0002" target="_blank" rel="noopener noreferrer" className="btn-accent">
               Schedule Now <ArrowRight size={15} />
             </a>

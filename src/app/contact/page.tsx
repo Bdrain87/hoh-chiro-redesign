@@ -19,7 +19,7 @@ export default function ContactPage() {
           <div className="max-w-2xl">
             <div className="section-label" style={{ color: "rgba(106,173,123,0.8)" }}>Get in Touch</div>
             <h1 className="text-[clamp(2.4rem,5vw,4rem)] font-extrabold text-white mb-5 tracking-tight">Contact Us</h1>
-            <p className="text-white/45 text-lg max-w-lg leading-relaxed">
+            <p className="text-white/80 text-lg max-w-lg leading-relaxed">
               Ready to begin your journey to better health? We&apos;re here to help.
             </p>
           </div>
@@ -118,7 +118,7 @@ export default function ContactPage() {
         <div className="max-w-[640px] mx-auto px-6 py-16 text-center">
           <ScrollReveal>
             <h2 className="text-2xl font-extrabold text-white mb-3 tracking-tight">Involved in an Auto Accident?</h2>
-            <p className="text-white/40 mb-8">Please call us directly to schedule a priority appointment.</p>
+            <p className="text-white/75 mb-8">Please call us directly to schedule a priority appointment.</p>
             <a href="tel:810-494-1900" className="btn-accent">
               <Phone size={15} /> Call (810) 494-1900
             </a>
