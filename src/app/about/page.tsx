@@ -62,7 +62,7 @@ export default function AboutPage() {
             </ScrollReveal>
             <ScrollReveal variant="right">
               <div className="img-reveal shadow-2xl">
-                <img src="https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-20.jpg" alt="Hands on Health Chiropractic care" className="w-full h-[480px] object-cover" />
+                <img src="https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-20.jpg" alt="Hands on Health Chiropractic care" className="w-full h-[280px] md:h-[480px] object-cover" />
               </div>
             </ScrollReveal>
           </div>
@@ -100,7 +100,7 @@ export default function AboutPage() {
             <ScrollReveal key={member.name} variant="scale">
               <div className="grid md:grid-cols-2 gap-0 items-stretch mb-16 bg-surface-alt rounded-2xl overflow-hidden border border-border-light">
                 <div className="img-reveal rounded-none">
-                  <img src={member.img} alt={member.name} className="w-full h-full min-h-[380px] object-cover" />
+                  <img src={member.img} alt={member.name} className="w-full h-full min-h-[260px] md:min-h-[380px] object-cover" />
                 </div>
                 <div className="p-10 md:p-12 flex flex-col justify-center">
                   <p className="text-accent text-[11px] font-semibold uppercase tracking-[0.14em] mb-3">{member.role}</p>

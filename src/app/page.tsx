@@ -109,7 +109,7 @@ export default function Home() {
                   className="w-full h-[420px] object-cover"
                 />
               </div>
-              <div className="absolute -bottom-5 -left-5 bg-white rounded-2xl shadow-[0_24px_48px_-12px_rgba(0,0,0,0.25)] p-5 max-w-[210px]">
+              <div className="absolute bottom-0 left-0 bg-white rounded-2xl shadow-[0_24px_48px_-12px_rgba(0,0,0,0.25)] p-5 max-w-[210px] translate-y-5 -translate-x-5">
                 <div className="flex items-center gap-0.5 mb-2">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} size={14} className="text-yellow-400 fill-yellow-400" />
@@ -118,7 +118,7 @@ export default function Home() {
                 <p className="text-ink font-bold text-sm">4.9 on Google</p>
                 <p className="text-ink-muted text-xs">255+ verified reviews</p>
               </div>
-              <div className="absolute -top-4 -right-4 bg-accent text-white rounded-2xl shadow-xl px-5 py-3.5 text-center">
+              <div className="absolute top-0 right-0 bg-accent text-white rounded-2xl shadow-xl px-5 py-3.5 text-center -translate-y-4 translate-x-4">
                 <p className="text-2xl font-extrabold leading-none">10+</p>
                 <p className="text-[10px] font-medium opacity-80 mt-0.5">Years Serving<br />Brighton</p>
               </div>
@@ -164,9 +164,9 @@ export default function Home() {
             <ScrollReveal variant="right">
               <div className="relative">
                 <div className="img-reveal shadow-2xl">
-                  <img src="https://hohchiro.com/wp-content/uploads/2021/12/22-scaled.jpg" alt="Hands on Health Chiropractic team" className="w-full h-[480px] object-cover" />
+                  <img src="https://hohchiro.com/wp-content/uploads/2021/12/22-scaled.jpg" alt="Hands on Health Chiropractic team" className="w-full h-[280px] md:h-[480px] object-cover" />
                 </div>
-                <div className="absolute -bottom-6 -left-6 bg-surface rounded-2xl shadow-[0_24px_48px_-12px_rgba(0,0,0,0.12)] p-5 max-w-[200px] hidden md:block">
+                <div className="absolute bottom-0 left-0 bg-surface rounded-2xl shadow-[0_24px_48px_-12px_rgba(0,0,0,0.12)] p-5 max-w-[200px] hidden md:block translate-y-6 -translate-x-6">
                   <div className="flex items-center gap-0.5 mb-2">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} size={13} className="text-yellow-400 fill-yellow-400" />
@@ -194,7 +194,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-5">
             {coreServices.map((svc, i) => (
               <ScrollReveal key={svc.title} variant="scale" delay={i * 100}>
-                <Link href={svc.href} className="group relative rounded-2xl overflow-hidden h-[500px] block card-hover">
+                <Link href={svc.href} className="group relative rounded-2xl overflow-hidden h-[320px] md:h-[500px] block card-hover">
                   <img src={svc.img} alt={svc.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-8">

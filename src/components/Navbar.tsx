@@ -101,7 +101,7 @@ export default function Navbar() {
         </div>
 
         {open && (
-          <div className="lg:hidden fixed inset-0 top-[72px] bg-white z-40" style={{ paddingTop: "32px" }}>
+          <div className="lg:hidden fixed inset-x-0 bottom-0 top-[72px] bg-white z-40 overflow-y-auto" style={{ paddingTop: "32px" }}>
             <div className="max-w-[1280px] mx-auto px-6 space-y-1">
               {navLinks.map((link) => (
                 <Link
