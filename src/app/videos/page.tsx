@@ -19,7 +19,7 @@ export default function VideosPage() {
           <div className="max-w-2xl">
             <div className="section-label" style={{ color: "rgba(106,173,123,0.8)" }}>Media</div>
             <h1 className="text-[clamp(2.4rem,5vw,4rem)] font-extrabold text-white mb-5 tracking-tight">Watch &amp; Learn</h1>
-            <p className="text-white/45 text-lg max-w-lg leading-relaxed">
+            <p className="text-white/80 text-lg max-w-lg leading-relaxed">
               Learn about the benefits of chiropractic care and ways to improve your health.
             </p>
           </div>

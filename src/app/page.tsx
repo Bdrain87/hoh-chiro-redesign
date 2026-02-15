@@ -13,7 +13,7 @@ const coreServices = [
   {
     title: "Chiropractic Care",
     desc: "Expert adjustments to reduce pain, restore mobility, and optimize spinal health using proven techniques.",
-    img: "https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-16.jpg",
+    img: "https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-12.jpg",
     href: "/services",
   },
   {
@@ -25,7 +25,7 @@ const coreServices = [
   {
     title: "Spinal Decompression",
     desc: "FDA-approved non-surgical treatment for herniated discs, sciatica, and degenerative disc disease.",
-    img: "https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-10.jpg",
+    img: "https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-16.jpg",
     href: "/services",
   },
 ];
@@ -37,9 +37,9 @@ const wellnessServices = [
 ];
 
 const conditions = [
-  "Back Pain", "Neck Pain", "Sciatica", "Migraines", "Arthritis",
+  "Back Pain", "Neck Pain", "Lower Back Pain", "Upper Back Pain", "Sciatica", "Migraines", "Arthritis",
   "Fibromyalgia", "Bulging Discs", "Carpal Tunnel", "Shoulder Pain",
-  "High Blood Pressure", "Sleep Conditions", "Prenatal Care",
+  "High Blood Pressure", "Sleep Conditions", "Prenatal Discomfort", "Chronic Injuries", "Post-Surgery Recovery",
 ];
 
 const testimonials = [
@@ -64,10 +64,7 @@ export default function Home() {
   return (
     <>
       <section className="relative hero-gradient overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-cover bg-center opacity-[0.15]" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2020/03/web_frontdesk.jpg')" }} />
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0a1f14] via-[#0d2a1a]/95 to-[#1a3a2a]/80" />
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0a1f14] via-[#0d2a1a]/95 to-[#1a3a2a]/80" />
 
         <div className="relative max-w-[1280px] mx-auto px-6 pt-16 pb-10 md:pt-20 md:pb-14">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -82,7 +79,7 @@ export default function Home() {
                 <span className="gradient-text">healthier life.</span>
               </h1>
 
-              <p className="text-white/60 text-lg md:text-xl mb-10 leading-relaxed max-w-[520px]">
+              <p className="text-white/80 text-lg md:text-xl mb-10 leading-relaxed max-w-[520px]">
                 Chiropractic, massage, and holistic wellness &mdash; all under one roof. Personalized care for lasting results.
               </p>
 
@@ -97,7 +94,7 @@ export default function Home() {
                 </a>
                 <a
                   href="tel:810-494-1900"
-                  className="btn-secondary border-white/15 text-white hover:border-white/30 hover:text-white"
+                  className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-semibold text-white border-[1.5px] border-white/30 hover:border-white/60 hover:bg-white/10 transition-all duration-300"
                 >
                   <Phone size={15} /> (810) 494-1900
                 </a>
@@ -107,8 +104,8 @@ export default function Home() {
             <div className="relative hidden lg:block">
               <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/[0.06]">
                 <img
-                  src="https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-9.jpg"
-                  alt="Chiropractic care at Hands on Health"
+                  src="https://hohchiro.com/wp-content/uploads/2020/03/web_frontdesk.jpg"
+                  alt="Hands on Health Chiropractic office"
                   className="w-full h-[420px] object-cover"
                 />
               </div>
@@ -135,7 +132,7 @@ export default function Home() {
               {stats.map((s) => (
                 <div key={s.label} className="text-center">
                   <p className="text-[clamp(1.5rem,3vw,2rem)] font-extrabold text-white tracking-tighter">{s.value}</p>
-                  <p className="text-white/40 text-[10px] font-medium uppercase tracking-[0.14em] mt-0.5">{s.label}</p>
+                  <p className="text-white/60 text-[10px] font-medium uppercase tracking-[0.14em] mt-0.5">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -214,20 +211,20 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-primary">
+      <section style={{ background: "linear-gradient(135deg, #0a1f14 0%, #1a3a2a 40%, #0d2a1a 100%)" }}>
         <div className="max-w-[1280px] mx-auto px-6 py-16 md:py-20">
           <ScrollReveal>
             <div className="text-center mb-10">
               <div className="section-label justify-center" style={{ color: "rgba(106,173,123,0.8)" }}>What We Help With</div>
               <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-extrabold text-white mb-3 tracking-tight">Conditions We Treat</h2>
-              <p className="text-white/40 max-w-lg mx-auto">From chronic pain to injury recovery, our team has the expertise to help.</p>
+              <p className="text-white/70 max-w-lg mx-auto">From chronic pain to injury recovery, our team has the expertise to help.</p>
             </div>
           </ScrollReveal>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
             {conditions.map((c, i) => (
               <ScrollReveal key={c} variant="up" delay={i * 40}>
-                <div className="bg-white/[0.06] border border-white/[0.08] rounded-xl px-5 py-4 text-center hover:bg-white/[0.12] hover:border-accent/40 transition-all duration-300">
-                  <span className="text-white/80 text-sm font-medium">{c}</span>
+                <div className="bg-white/[0.10] border border-white/[0.15] rounded-xl px-5 py-4 text-center hover:bg-white/[0.18] hover:border-accent/40 transition-all duration-300">
+                  <span className="text-white text-sm font-medium">{c}</span>
                 </div>
               </ScrollReveal>
             ))}
@@ -243,7 +240,6 @@ export default function Home() {
       </section>
 
       <section className="relative hero-gradient overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-[0.07]" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-20.jpg')" }} />
         <div className="relative max-w-[1280px] mx-auto px-6 py-16 md:py-20">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <ScrollReveal variant="left">
@@ -252,7 +248,7 @@ export default function Home() {
                 <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] font-extrabold text-white mb-5 leading-[1.1]">
                   A complete approach<br />to wellness.
                 </h2>
-                <p className="text-white/45 text-base leading-relaxed mb-10">
+                <p className="text-white/75 text-base leading-relaxed mb-10">
                   From stretch therapy and cold laser to nutrition counseling and supplements, we address every dimension of your health.
                 </p>
                 <Link href="/other-services" className="btn-accent">
@@ -270,7 +266,7 @@ export default function Home() {
                       </div>
                       <div>
                         <h3 className="text-white font-bold text-[15px] mb-1">{svc.title}</h3>
-                        <p className="text-white/40 text-sm leading-relaxed">{svc.desc}</p>
+                        <p className="text-white/70 text-sm leading-relaxed">{svc.desc}</p>
                       </div>
                     </div>
                   </div>
@@ -404,11 +400,10 @@ export default function Home() {
       </section>
 
       <section className="relative hero-gradient overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center opacity-[0.07]" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-17.jpg')" }} />
         <div className="relative max-w-[640px] mx-auto px-6 py-16 md:py-20 text-center">
           <ScrollReveal>
             <h2 className="text-[clamp(1.8rem,4vw,3rem)] font-extrabold text-white mb-5 tracking-tight">Ready to feel better?</h2>
-            <p className="text-white/40 text-lg mb-12 max-w-md mx-auto leading-relaxed">Take the first step. Our team is here to build a personalized plan around your health goals.</p>
+            <p className="text-white/75 text-lg mb-12 max-w-md mx-auto leading-relaxed">Take the first step. Our team is here to build a personalized plan around your health goals.</p>
             <a
               href="https://intake.mychirotouch.com/?clinic=HOHC0002"
               target="_blank"

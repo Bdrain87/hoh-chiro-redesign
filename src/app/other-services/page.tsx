@@ -22,13 +22,13 @@ export default function OtherServicesPage() {
   return (
     <>
       <section className="relative hero-gradient overflow-hidden min-h-[50vh] flex items-center">
-        <div className="absolute inset-0 bg-cover bg-center opacity-40" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-17.jpg')" }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a1f14]/90 via-[#0a1f14]/60 to-transparent" />
+        <div className="absolute inset-0 bg-cover bg-center opacity-50" style={{ backgroundImage: "url('https://hohchiro.com/wp-content/uploads/2020/02/HandsOnChiro-17.jpg')" }} />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a1f14]/60 via-[#0a1f14]/40 to-[#0a1f14]/70" />
         <div className="relative max-w-[1280px] mx-auto px-6 py-28">
           <div className="max-w-2xl">
             <div className="section-label" style={{ color: "rgba(106,173,123,0.8)" }}>Holistic Health</div>
             <h1 className="text-[clamp(2.4rem,5vw,4rem)] font-extrabold text-white mb-5 tracking-tight">Wellness Services</h1>
-            <p className="text-white/45 text-lg max-w-lg leading-relaxed">
+            <p className="text-white/80 text-lg max-w-lg leading-relaxed">
               Complementary therapies to support your total health journey — beyond adjustments.
             </p>
           </div>
@@ -100,7 +100,7 @@ export default function OtherServicesPage() {
         <div className="relative max-w-[640px] mx-auto px-6 py-16 md:py-20 text-center">
           <ScrollReveal>
             <h2 className="text-[clamp(1.8rem,4vw,3rem)] font-extrabold text-white mb-5 tracking-tight">Shop recommended supplements</h2>
-            <p className="text-white/40 mb-12">Practitioner-grade supplements curated for your specific health needs.</p>
+            <p className="text-white/75 mb-12">Practitioner-grade supplements curated for your specific health needs.</p>
             <a href="https://www.thorne.com/u/handsonhealthchiropractic" target="_blank" rel="noopener noreferrer" className="btn-accent">
               Thorne Store <ArrowRight size={15} />
             </a>
